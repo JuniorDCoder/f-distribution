@@ -131,7 +131,7 @@ Group A, Group B
 
 ## Credits
 
-- **Developer**: [Your Name]
+- **Developer**: JuniorDCoder
 - **Libraries Used**: TailwindCSS, CSV Parsing Library
 
 ---
