@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F-Test Calculator</title>
+  <script src="script.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 text-gray-800 font-sans min-h-screen flex items-center justify-center">
+  <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-xl">
+    <h1 class="text-4xl font-bold text-center mb-8 text-blue-600">F-Test Calculator</h1>
+
+    <div class="space-y-6">
+      <!-- Upload Section -->
+      <div>
+        <label class="block text-lg font-medium">Upload Dataset (CSV):</label>
+        <input required type="file" id="fileInput" class="border mt-2 p-2 w-full rounded-lg" accept=".csv">
+      </div>
+
+      <!-- Hypotheses Section -->
+      <div>
+        <label class="block text-lg font-medium">Null Hypothesis (H<sub>0</sub>):</label>
+        <input type="text" id="nullHypothesis" class="border mt-2 p-2 w-full rounded-lg">
+      </div>
+
+      <div>
+        <label class="block text-lg font-medium">Alternate Hypothesis (H<sub>1</sub>):</label>
+        <input type="text" id="altHypothesis" class="border mt-2 p-2 w-full rounded-lg">
+      </div>
+
+      <div>
+        <label class="block text-lg font-medium">Significance Level:</label>
+        <select id="significanceLevel" class="border mt-2 p-2 w-full rounded-lg">
+          <option value="0.01">0.01</option>
+          <option value="0.05">0.05</option>
+          <option value="0.10">0.1</option>
+        </select>
+      </div>
+
+      <!-- Calculate Button -->
+      <button id="calculateBtn" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-lg mt-6 hover:shadow-lg hover:scale-105 transform transition-all">
+        Calculate F-Value
+      </button>
+
+      <!-- Loader -->
+      <div id="loader" class="flex justify-center items-center mt-6 hidden">
+        <div class="loader"></div>
+      </div>
+
+      <!-- Results Section -->
+      <div id="results" class="mt-6 p-6 bg-gray-50 rounded-lg shadow hidden">
+        <h2 class="text-2xl font-semibold text-green-600">Results</h2>
+        <p id="fValue" class="text-lg mt-4"></p>
+        <p id="df1" class="text-lg mt-4"></p>
+        <p id="df2" class="text-lg mt-4"></p>
+        <p id="criticalValue" class="text-lg mt-4"></p>
+        <p id="conclusion" class="text-lg mt-4"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
